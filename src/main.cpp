@@ -18,7 +18,7 @@ extern "C" {
 SerialPort serial;
 
 #define BLYNK_PRINT serial
-#define BLYNK_DEBUG_ALL
+//#define BLYNK_DEBUG
 
 #include <BlynkSimpleMW300.h>
 
