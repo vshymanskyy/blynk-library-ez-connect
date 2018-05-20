@@ -92,9 +92,9 @@ protected:
         lastHeartbeat = lastActivityIn = lastActivityOut = (BlynkMillis() - 5000UL);
 
 #if defined(BLYNK_NO_FANCY_LOGO)
-        BLYNK_LOG1(BLYNK_F("Blynk v" BLYNK_VERSION " on " BLYNK_INFO_DEVICE));
+        BLYNK_LOG4(BLYNK_F("Blynk v"), BLYNK_VERSION, " on ",  BLYNK_INFO_DEVICE);
 #elif defined(BLYNK_FANCY_LOGO_3D)
-        BLYNK_LOG1(BLYNK_F(BLYNK_NEWLINE
+        BLYNK_LOG4(BLYNK_F(BLYNK_NEWLINE
             "   ____     ___                      __" BLYNK_NEWLINE
             "  /\\  _`\\  /\\_ \\                    /\\ \\  _" BLYNK_NEWLINE
             "  \\ \\ \\_\\ \\\\//\\ \\    __  __     ___ \\ \\ \\/ \\" BLYNK_NEWLINE
@@ -103,16 +103,16 @@ protected:
             "     \\ \\____/ /\\____\\\\/`____ \\\\ \\_\\ \\_\\\\ \\_\\\\_\\" BLYNK_NEWLINE
             "      \\/___/  \\/____/ `/___/\\ \\\\/_/\\/_/ \\/_//_/" BLYNK_NEWLINE
             "                         /\\___/" BLYNK_NEWLINE
-            "                         \\/__/   " BLYNK_VERSION " on " BLYNK_INFO_DEVICE BLYNK_NEWLINE
-        ));
+            "                         \\/__/   v"), BLYNK_VERSION, " on ", BLYNK_INFO_DEVICE
+        );
 #else
-        BLYNK_LOG1(BLYNK_F(BLYNK_NEWLINE
+        BLYNK_LOG4(BLYNK_F(BLYNK_NEWLINE
             "    ___  __          __" BLYNK_NEWLINE
             "   / _ )/ /_ _____  / /__" BLYNK_NEWLINE
             "  / _  / / // / _ \\/  '_/" BLYNK_NEWLINE
             " /____/_/\\_, /_//_/_/\\_\\" BLYNK_NEWLINE
-            "        /___/ v" BLYNK_VERSION " on " BLYNK_INFO_DEVICE BLYNK_NEWLINE
-        ));
+            "        /___/ v"), BLYNK_VERSION, " on ", BLYNK_INFO_DEVICE
+        );
 #endif
     }
     bool processInput(void);
